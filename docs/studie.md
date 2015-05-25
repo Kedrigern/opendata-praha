@@ -61,11 +61,11 @@ Více: [http://www.otevrenadata.cz/otevrena-data/](http://www.otevrenadata.cz/ot
 
 Velmi kvalitním příkladem otevřených dat je [Londýn](http://data.london.gov.uk/), který má dokonce tvrdá čísla k prospěšnosti OpenDat. 
 
-[image alt text](/studie/image_0.png)
+[image alt text](/docs/studie/image_0.png)
 
 Obrázek 1: Úvodní stránka londýnských OpenDat.
 
-![image alt text](/studie/image_1.png)
+![image alt text](/docs/studie/image_1.png)
 
 Obrázek 2: Turistika v Londýně (vybraná část, data jsou rozsáhlejší)
 
@@ -81,7 +81,7 @@ Děčín v současnosti přechází z vlastního řešení na DKAN.
 
 Více: [http://www.mmdecin.cz/component/k2/item/552](http://www.mmdecin.cz/component/k2/item/552)
 
-![image alt text](/studie/image_2.jpg)
+![image alt text](/docs/studie/image_2.jpg)
 
 Obrázek 3: Rozložení počtu veřejných zakázek v Děčíně v roce 2013. Vidíme, že většina je do 50 000 Kč (čili bez povinnosti oslovit více dodavatelů).
 
@@ -129,11 +129,11 @@ DKAN se automaticky stará o persistentnost odkazů, verzování a vytváří AP
 
 Ukázky defaultní vizualizace dat v modulu DKAN.
 
-![image alt text](/studie/image_3.png)
+![image alt text](/docs/studie/image_3.png)
 
 Obrázek 4: Vizualizace cen zlata v jednotlivých letech. Zdrojem dat je prostý CSV soubor.
 
-![image alt text](/studie/image_4.png)
+![image alt text](/docs/studie/image_4.png)
 
 Obrázek 5: Vizualizace polohy volebních místnostní v Madisonu. Zdrojem dat je prostý CSV soubor.
 
@@ -199,7 +199,7 @@ Praha aspiruje na 4. až 5. hvězdu. Propojení zatím bude jen formou jednozna�
 
 Více: [http://5stardata.info](http://5stardata.info)
 
- ![image alt text](/studie/image_5.png)
+ ![image alt text](/docs/studie/image_5.png)
 
 # Rozvoj
 
@@ -375,7 +375,7 @@ Stejně tak lze uvažovat o zapojení do celoevropských otevřených dat jako n
 
 # Přílohy
 
-![image alt text](/studie/image_6.png)
+![image alt text](/docs/studie/image_6.png)
 
 Obrázek 6: Pohled na úvodní stránku opendat MFČR
 
