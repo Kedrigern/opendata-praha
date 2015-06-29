@@ -35,17 +35,16 @@ Více: [http://www.otevrenadata.cz/otevrena-data/](http://www.otevrenadata.cz/ot
 
 Velmi kvalitním příkladem otevřených dat je [Londýn](http://data.london.gov.uk/), který má dokonce tvrdá čísla k prospěšnosti OpenDat. 
 
-[image alt text](./studie/image_0.png)
+![Úvodní stránka londýnských OpenDat](./studie/image_0.png)
 
-Obrázek 1: Úvodní stránka londýnských OpenDat.
-
-![image alt text](./studie/image_1.png)
-
-Obrázek 2: Turistika v Londýně (vybraná část, data jsou rozsáhlejší)
+![Turistika v Londýně (vybraná část, data jsou rozsáhlejší)](./studie/image_1.png)
 
 #### Děčín
 
-Děčín byl jedním z prvních průkopníků otevřených dat v ČR. Bohužel zájem o ně není příliš velký. Což je způsobeno dvěma faktory: 1) atraktivita severočeského města není taková jako světových metropolí, 2) vývojáři s otevřenými daty nepočítají, čili nevznikají aplikace.
+Děčín byl jedním z prvních průkopníků otevřených dat v ČR. Bohužel zájem o ně není příliš velký.
+Což je způsobeno dvěma faktory: 
+1) atraktivita severočeského města není taková jako světových metropolí, 
+2) vývojáři s\ otevřenými daty nepočítají, čili nevznikají aplikace.
 
 Na druhou stranu můžeme říci, že to Děčín nějak nezatížilo, nepřineslo problémy ani nic podobného.
 
@@ -55,13 +54,12 @@ Děčín v současnosti přechází z vlastního řešení na DKAN.
 
 Více: [http://www.mmdecin.cz/component/k2/item/552](http://www.mmdecin.cz/component/k2/item/552)
 
-![image alt text](./studie/image_2.jpg)
-
-Obrázek 3: Rozložení počtu veřejných zakázek v Děčíně v roce 2013. Vidíme, že většina je do 50 000 Kč (čili bez povinnosti oslovit více dodavatelů).
+![Rozložení počtu veřejných zakázek v Děčíně v roce 2013. Vidíme, že většina je do 50 000 Kč (čili bez povinnosti oslovit více dodavatelů).](./studie/image_2.jpg)
 
 #### IPR Praha
 
-Institut plánování a rozvoje Praha otevřel geografická data Prahy, která předtím prodával. Díky tomu je volně dostupné velké množství geografických dat v několika různých formátech.
+Institut plánování a rozvoje Praha otevřel geografická data Prahy, která předtím prodával.
+Díky tomu je volně dostupné velké množství geografických dat v několika různých formátech.
 
 Více: [http://opendata.iprpraha.cz](http://opendata.iprpraha.cz) 
 
@@ -69,7 +67,7 @@ Více: [http://opendata.iprpraha.cz](http://opendata.iprpraha.cz)
 
 Řešením [MFČR](http://data.mfcr.cz) a [MSČR](http://data.justice.cz), což je opensource CMS [Drupal](http://drupal.com/) s modulem [DKAN](http://nucivic.com/dkan/), se pouze inspirujeme. Tento systém bohužel nemá zapisovatelné API, které je třeba pro budoucí automatizaci.
 
-Namísto toho zvolíme principiálně a funkčně velmi podobné opensource řešení **[CKA**N](http://ckan.org)**.**
+Namísto toho zvolíme principiálně a funkčně velmi podobné opensource řešení [**CKAN**](http://ckan.org).
 
 Takto postavený systém nevyžaduje žádné extrémní nároky (stačí běžný LAPP: Linux, Apache, [Python 2](https://www.python.org), [PostgreSQL](http://www.postgresql.org), [SOLR](http://lucene.apache.org/solr) - engine nad [Lucene](http://lucene.apache.org), design [Bootstrap](http://getbootstrap.com)), je podporovaný komunitou v dostatečném rozsahu. Zároveň je pro uživatele dostatečně přívětivý.
 
@@ -103,13 +101,9 @@ DKAN se automaticky stará o persistentnost odkazů, verzování a vytváří AP
 
 Ukázky defaultní vizualizace dat v modulu DKAN.
 
-![image alt text](./studie/image_3.png)
+![Vizualizace cen zlata v jednotlivých letech. Zdrojem dat je prostý CSV soubor.](./studie/image_3.png)
 
-Obrázek 4: Vizualizace cen zlata v jednotlivých letech. Zdrojem dat je prostý CSV soubor.
-
-![image alt text](./studie/image_4.png)
-
-Obrázek 5: Vizualizace polohy volebních místnostní v Madisonu. Zdrojem dat je prostý CSV soubor.
+![Vizualizace polohy volebních místnostní v Madisonu. Zdrojem dat je prostý CSV soubor.](./studie/image_4.png)
 
 #### Workflow
 
@@ -173,7 +167,7 @@ Praha aspiruje na 4. až 5. hvězdu. Propojení zatím bude jen formou jednozna�
 
 Více: [http://5stardata.info](http://5stardata.info)
 
- ![image alt text](./studie/image_5.png)
+ ![Pětihvězdičkový model Otevřených dat](./studie/image_5.png)
 
 ### Rozvoj
 
@@ -197,7 +191,7 @@ Stejně tak lze uvažovat o zapojení do celoevropských otevřených dat jako n
 
 ### Seznam použitých zkratek
 
-| Zkratka |     Význam						|   Poznámka
+| Zkratka |     Význam						|   Poznámka         |
 |---------|---------------------------------|--------------------|
 | HMP     | Hlavní město Praha			 	| 	|
 | MHMP    | Magistrát HMP					|	|
@@ -218,8 +212,8 @@ Stejně tak lze uvažovat o zapojení do celoevropských otevřených dat jako n
 | OVO     | Odbor volených orgánů MHMP		|	|
 | CMS     | Content Managment System		| Systém pro správu obsahu webových stránek 					|
 | LAMP    | Linux Apache Mysql PHP/Python	| Velmi běžná kombinace nastavení serveru pro webové aplikace. 	|
-| LAPP    | Linux Apache PostgreSQL PHP/Python| Běžná kombinace nastavení serveru pro webové aplikace (obecně vzato profesionálnější než LAMP) |
-| IS      | Informační systém				|	|
+| LAPP    | Linux Apache PostgreSQL PHP/Python| Běžná kombinace nastavení serveru pro webové aplikace (obecně vzato profesionálnější než LAMP)      | 
+| IS      | Informační systém				|	| |
 
 ### Zdroje
 
@@ -241,7 +235,6 @@ Stejně tak lze uvažovat o zapojení do celoevropských otevřených dat jako n
 
 ### Přílohy
 
-![image alt text](./studie/image_6.png)
+![Pohled na úvodní stránku opendat MFČR](./studie/image_6.png)
 
-Obrázek 6: Pohled na úvodní stránku opendat MFČR
 

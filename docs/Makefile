@@ -3,9 +3,11 @@ pdf-pandoc: studie.md metodika.md
 	~/.cabal/bin/pandoc \
 		--smart \
 		-t latex \
+		--latex-engine=xelatex \
 		-o opendata.pdf \
-		--template="pt.tex" \
 		meta.md studie.md metodika.md
+# default template:
+# https://github.com/jgm/pandoc-templates/blob/master/default.latex
 
 pdf-mmd: studie.md metodika.md
 	multimarkdown \
