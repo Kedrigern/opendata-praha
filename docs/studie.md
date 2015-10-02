@@ -1,13 +1,14 @@
 
-## OpenData Praha - studie
+Opendata Praha - studie
+=======================
 
 ### Záměr
 
-V programovém prohlášení Rady hl. m. Prahy i komise ICT RHMP jsou OpenData (a dokonce i OpenSource) silně podpořena. Navíc jsou k realizaci přizváni Piráti a spolupracuje se s ministerstvem financí (Lukáš Wagenknecht). Z toho vyplývá, že je opravdu velká šance k úspěšné realizaci otevření pražských dat.
+V programovém prohlášení Rady hl. m. Prahy[^1] i komise ICT RHMP[^2] jsou OpenData (a dokonce i OpenSource) silně podpořena. Navíc jsou k realizaci přizváni Piráti a spolupracuje se s ministerstvem financí (Lukáš Wagenknecht). Z toho vyplývá, že je opravdu velká šance k úspěšné realizaci otevření pražských dat.
 
-Tento dokument je prvotní výkop ke stanovení toho, co zveřejnovat, jak to technicky provést a odkud data získat (zodpovědná osoba, informační systém etc.).
+Tento dokument je úvodním stanovením toho, co zveřejnovat, jak to technicky provést a odkud data získat (zodpovědná osoba, informační systém etc.).
 
-Též v úvahách zahrneme jednotlivé městské části (MČ).
+Též v úvahách zahrneme jednotlivé městské části (MČ), jelikož počítáme s projektem celopražských otevřených dat.
 
 Budu velmi rád za věcné připomínky, nápady a i další způsoby věcné kritiky textu (nebojte se napsat, že něčemu nerozumíte! Chyba je většinou v překladu).
 
@@ -15,11 +16,12 @@ OpenData musí být:
 
 1. Veřejná (dostupná, bez licenčního zatížení)
 
-2. Strojově čitelná (otevřený formát)
+2. Strojově čitelná (otevřený formát, strojově zpracovatelný)
 
-3. Uspořádány v daném schématu (přístup přes dané rozhraní - API)
+3. Uspořádány v daném schématu (přístup přes dané rozhraní - API, to zajistí celoměstský portál)
 
-4. zpřístupněna za jasně definovaných podmínek užití dat s minimem omezení,
+4. zpřístupněna za jasně definovaných podmínek užití dat s minimem omezení
+
 
 ### Proč OpenData?
 
@@ -31,6 +33,7 @@ Krásným příkladem je, že navrhované řešení umí zobrazit údaje na map�
 
 Více: [http://www.otevrenadata.cz/otevrena-data/](http://www.otevrenadata.cz/otevrena-data/)
 
+
 #### Londýn
 
 Velmi kvalitním příkladem otevřených dat je [Londýn](http://data.london.gov.uk/), který má dokonce tvrdá čísla k prospěšnosti OpenDat. 
@@ -38,6 +41,7 @@ Velmi kvalitním příkladem otevřených dat je [Londýn](http://data.london.go
 ![Úvodní stránka londýnských OpenDat](./studie/image_0.png)
 
 ![Turistika v Londýně (vybraná část, data jsou rozsáhlejší)](./studie/image_1.png)
+
 
 #### Děčín
 
@@ -56,12 +60,14 @@ Více: [http://www.mmdecin.cz/component/k2/item/552](http://www.mmdecin.cz/compo
 
 ![Rozložení počtu veřejných zakázek v Děčíně v roce 2013. Vidíme, že většina je do 50 000 Kč (čili bez povinnosti oslovit více dodavatelů).](./studie/image_2.jpg)
 
+
 #### IPR Praha
 
 Institut plánování a rozvoje Praha otevřel geografická data Prahy, která předtím prodával.
 Díky tomu je volně dostupné velké množství geografických dat v několika různých formátech.
 
 Více: [http://opendata.iprpraha.cz](http://opendata.iprpraha.cz) 
+
 
 ### Technické řešení
 
@@ -71,13 +77,14 @@ Namísto toho zvolíme principiálně a funkčně velmi podobné opensource ře�
 
 Takto postavený systém nevyžaduje žádné extrémní nároky (stačí běžný LAPP: Linux, Apache, [Python 2](https://www.python.org), [PostgreSQL](http://www.postgresql.org), [SOLR](http://lucene.apache.org/solr) - engine nad [Lucene](http://lucene.apache.org), design [Bootstrap](http://getbootstrap.com)), je podporovaný komunitou v dostatečném rozsahu. Zároveň je pro uživatele dostatečně přívětivý.
 
-Jedna instance bude stačit pro MHMP, MČ i příspěvkové organizace. Technickým správcem bude odbor informatiky MHMP (INF). Věcným správcem bude odbor podnikatelských aktivit (OPA).
+Jedna instance bude stačit pro MHMP, MČ i příspěvkové organizace. Technickým správcem bude odbor informatiky MHMP (INF). Věcným správcem zatím není určen.
 
-Výhodou je, že tím na MČ nepřeneseme téměř žádné nároky. Navíc data budou na jednom místě.
+Výhodou je, že tím na MČ nepřeneseme téměř žádné nároky. Navíc data budou na jednom místě (s množstvím dat stoupá jejich atraktivita).
 
 Jediné náklady budou na provoz serveru a čas zaměstnanců. Vzhledem k rozsahu IT infrastruktury MHMP to jsou však zcela zanedbatelné náklady.
 
 Je samozřejmě třeba dořešit věci jako monitorování přístupů (oblíbenosti, využívání) a jak tato data distribuovat zpět dalším subjektům.
+
 
 #### Formáty a typy dat
 
@@ -93,61 +100,66 @@ Jak vidíme, tak jen kategorie I. jsou data určená pro rozsáhlý datamining. 
 
 Technické řešení (CKAN) příjímá data ve formátech CSV, XSLX, XML, ODF, DOCX, popřípadě PDF. Pro kategorie I. je ideální CSV, pro kategorii II. a III. pak DOCX, strojově čitelné PDF (dle toho, co lze sehnat).
 
-Výstupní formát je shodný se vstupním (nahraju-li csv, dostanu csv). Navíc však DKAN zpracuje u vybraných formátů dle příslušných ontologií formáty RDF a JSON, což jsou nejpoužívanější a nejpraktičtější formáty pro OpenData. DKAN též umí data vizualizovat. Buďto pomocí různých druhů grafů, anebo vyznačit na mapě.
+Výstupní formát je shodný se vstupním (nahraju-li csv, dostanu csv). Navíc však CKAN zpracuje u vybraných formátů dle příslušných ontologií formáty RDF a JSON, což jsou nejpoužívanější a nejpraktičtější formáty pro OpenData. DKAN též umí data vizualizovat. Buďto pomocí různých druhů grafů, anebo vyznačit na mapě.
 
 DKAN se automaticky stará o persistentnost odkazů, verzování a vytváří API dle zadaných pravidel.
 
+
 ##### Vizualizace
 
-Ukázky defaultní vizualizace dat v modulu DKAN.
+Ukázky defaultní vizualizace dat v modulu CKAN.
 
 ![Vizualizace cen zlata v jednotlivých letech. Zdrojem dat je prostý CSV soubor.](./studie/image_3.png)
 
 ![Vizualizace polohy volebních místnostní v Madisonu. Zdrojem dat je prostý CSV soubor.](./studie/image_4.png)
 
+
 #### Workflow
 
 Workflow opět využijeme stejné jako na MFČR. Namísto automatizace zaneseme interně do povinností kurátorů datavých sad, aby data zkompletovali a nahráli v daném termínu. V praxi se nebude jednat o velkou zátěž, jelikož většina dat vzniká prostým exportem z IS (cca. 4 kliknutí, následně nahrání daného souboru). Popřípadě se dokonce data odesílají již dnes, ale pouze interně (což lze následně zrušit a interně čerpat z OpenDat).
 
-Do budoucna se jistě počítá s automatizací tam, kde to bude možné. Ale v současnosti nemá cenu se tím zdržovat.
+Do budoucna se jistě počítá s automatizací tam, kde to bude možné. Ale v současnosti nemá cenu se tím zdržovat. Instituce i odbory samozřejmě mohou práci optimalizovat dle uvážení - mají přístup přes webové rozhraní i skrz API.
+
 
 ### Licence
 
-Je nezbytné, aby data byla uvolněna pod nerestriktivní licencí. MFČR má podmínky různé pro každou sadu. Nicméně většina z nich je uvedena jako "Volné dílo”.
+Je nezbytné, aby data byla uvolněna pod nerestriktivní licencí. MFČR má podmínky různé pro každou sadu. Nicméně většina z nich je uvedena jako "Volné dílo".
 
 Více: [http://opendatacommons.org](http://opendatacommons.org)
+
 
 ### Datové sety
 
 Přimárně chceme zveřejnit již dnes zveřejněná data, popř. data, která všichni považovali za nezajímavá. Tím, že data budou strojově čitelná, vznikají zcela nové možnosti, jak s nimi pracovat.
 
-Návrh datových sad (setů) je podrobněji rozepsán v samostatném dokumentu (metodika).
+Datové sady též podrobně předpřipravilo [ministerstvo vnitra](http://opendata.gov.cz/vzor:start).
 
-### Kdo se připojí?
 
-Zatím jsme ve fázi vyjednávání. Předběžně se hovoří o následujících institucích:
 
-* MHMP: Ondřej Profant (komise ICT)
 
-* Praha 1: Jan Václav Čep (komise ICT)
 
-* Praha 6: Pavel Weber (komise ICT)
 
-* Praha 7: Ondřej Profant (komise ICT)
 
-* Praha 8: Josef Gattermayer (komise ICT)
 
-* Praha 11: Filip Miler
 
-* Praha 12: Dušan Hnilica (poradce ředitele INF MHMP)
 
-* Praha 15: Dušan Hnilica (poradce ředitele INF MHMP a starosty MČ P15)
 
-* Zbraslav: Ondřej Šlocar (komise ICT)
 
-* ZOO Praha: Jiří Malina ( náměstek útvaru koncepce a rozvoje)
 
-Věříme, že se další instituce následně připojí.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ### Kvalita dat (pětihvězdičkový model)
 
@@ -169,13 +181,16 @@ Více: [http://5stardata.info](http://5stardata.info)
 
  ![Pětihvězdičkový model Otevřených dat](./studie/image_5.png)
 
+
 ### Rozvoj
 
 Nejméně v prvním roce bude třeba rozšiřovat datové sady a dohlížet na jejich řádné propojení. Též bude třeba komunikovat s dalšími institucemi, které mají cenná data (např. MČ, DPP, ROPID …), aby je otevřely. 
 
+
 #### Automatizace
 
 Automatizace je přirozený další krok. Je však náročný v tom, že je potřeba vytvořit mnoho konektorů na různé systémy. Nicméně tento krok lze rozložit do delšího časového období, dle priorit.
+
 
 #### Smlouvy
 
@@ -183,11 +198,13 @@ Státní instituce dnes smlouvy nad 500 000 Kč povinně zveřejňují na [port�
 
 V rámci projektu Otevřená města vzniká opensource centrální registr smluv, který je přímo zaměřen na potřeby obcí. Obsahuje přímo specifikaci metadat smlouvy etc. Hotový by měl být v létě 2015. Předpokládá následnou migraci do centrálního státní registru. 
 
+
 #### Národní katalog
 
 MVČR připravuje metodiku (definici datových setů) pro orgány státní správy. Do budoucna snad i samosprávy. Z předběžných jednání je jasné, že bude počítat se systémy DKAN a CKAN (data se mají centrálně sbírat do jednoho katalogu).
 
 Stejně tak lze uvažovat o zapojení do celoevropských otevřených dat jako např. [PublicDataEU](http://publicdata.eu). 
+
 
 ### Seznam použitých zkratek
 
@@ -212,8 +229,9 @@ Stejně tak lze uvažovat o zapojení do celoevropských otevřených dat jako n
 | OVO     | Odbor volených orgánů MHMP		|	|
 | CMS     | Content Managment System		| Systém pro správu obsahu webových stránek 					|
 | LAMP    | Linux Apache Mysql PHP/Python	| Velmi běžná kombinace nastavení serveru pro webové aplikace. 	|
-| LAPP    | Linux Apache PostgreSQL PHP/Python| Běžná kombinace nastavení serveru pro webové aplikace (obecně vzato profesionálnější než LAMP)      | 
+| LAPP    | Linux Apache PostgreSQL PHP/Python| Běžná kombinace nastavení serveru pro webové aplikace\\ (obecně vzato profesionálnější než LAMP)      | 
 | IS      | Informační systém				|	| |
+
 
 ### Zdroje
 
@@ -233,8 +251,14 @@ Stejně tak lze uvažovat o zapojení do celoevropských otevřených dat jako n
 * Velmi pěkně zpracované souhrné PDF: [http://bit.ly/1NCDipy](http://bit.ly/1NCDipy)
 * Data v dopravě: [http://www.ioda.cz](http://www.ioda.cz) a [http://www.vyrocenky.cz](http://www.vyrocenky.cz) 
 
+
 ### Přílohy
+
+### Implementace
 
 ![Pohled na úvodní stránku opendat MFČR](./studie/image_6.png)
 
+\newpage
 
+[^1]: [Programové prohlášení RHMP](http://www.praha.eu/public/9f/ba/8e/2011700_570389_Programove_prohlaseni__RADA.pdf).
+[^2]: Komise ICT RHMP schválila projektový záměr opendat 16. 5. 2015
