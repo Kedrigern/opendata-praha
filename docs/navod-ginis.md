@@ -1,5 +1,5 @@
-Otevřená data: získání dát ze softwaru Ginis
-============================================
+Návod: získání dát ze softwaru Ginis
+====================================
 
 Úvod
 ----
